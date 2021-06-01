@@ -1,0 +1,133 @@
+# Site configuration
+# 1. Files excluded from Jekyll builds
+# 2. Installed Gems
+# 3. Gem settings
+# 4. Jekyll settings
+# 5. Collections
+# 6. Jekyll collections settings
+# 7. Site settings
+# 8. Site favicons & manifest icons
+# 9. Site navigation
+
+# --------------------------------------------------------------------------- #
+
+# 1. Files excluded from Jekyll builds
+exclude:
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- LICENSE
+- Gemfile
+- Gemfile.lock
+- alembic-jekyll-theme.gemspec
+- .jekyll-cache
+- search.md
+- thanks.md
+
+# --------------------------------------------------------------------------- #
+
+# 2. Installed Gems
+plugins:
+- jekyll-sitemap
+- jekyll-mentions
+- jekyll-paginate
+- jekyll-seo-tag
+- jekyll-redirect-from
+- jekyll-feed
+- jekyll-commonmark
+- jekyll-include-cache
+- jemoji
+
+# --------------------------------------------------------------------------- #
+
+# 3. Gem settings
+paginate: 5 # jekyll-paginate > items per page
+paginate_path: projects/page:num # jekyll-paginate > blog page
+jekyll-mentions: https://twitter.com # jekyll-mentions > service used when @replying
+# markdown: CommonMark # Markdown parse settings, CommonMark performs slightly better an others in build time
+# commonmark:
+  # options: ["SMART", "FOOTNOTES"]
+  # extensions: ["strikethrough", "autolink", "table"]
+
+# --------------------------------------------------------------------------- #
+
+# 4. Jekyll settings
+sass:
+  style: compressed # Style compression
+permalink: /projects/:title/
+
+# --------------------------------------------------------------------------- #
+
+# 5. Collections
+collections:
+  posts:
+    title: Projects # Needed for Siteleaf
+    output: true
+    description: "[See Project Categories](categories)"
+    feature_text: |
+      Current and Past Projects
+    feature_image: "/../assets/figures/jeremy-banks-skyline-edit.jpg"
+
+# --------------------------------------------------------------------------- #
+
+# 6. Jekyll collections settings
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      image: "/assets/figures/default-social-image.png" # Default image for sharing
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post # Set the default layout for posts
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page # Set the default layout for pages
+
+# --------------------------------------------------------------------------- #
+
+# 7. Site settings
+encoding: utf-8 # Make sure the encoding is right
+lang: en-US # Set the site language
+title: "Gustavo Sopena" # Site name or title, also used in jekyll-seo-tag
+logo: "/assets/logos/gs.png" # Site logo, also used in jekyll-seo-tag
+description: "Gustavo Sopena's website to showcase projects."
+url: "https://gustavo-sopena.github.io"
+baseurl: ""
+email: "gsopena7@gmail.com"
+css_inline: true # Will insert all styles into a single <style> block in the <head> element and remove the style <link> reference
+
+# --------------------------------------------------------------------------- #
+
+# 8. Site favicons & manifest icons
+favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
+  16: '/assets/logos/logo@16px.png'
+  32: '/assets/logos/logo@32px.png'
+  96: '/assets/logos/logo@96px.png'
+  120: '/assets/logos/logo@120px.png'
+  144: '/assets/logos/logo@144px.png'
+  180: '/assets/logos/logo@180px.png'
+  512: '/assets/logos/logo@512px.png'
+  1024: '/assets/logos/logo@1024px.png'
+
+# --------------------------------------------------------------------------- #
+
+# 9. Site navigation
+navigation_header:
+- title: Home
+  url: /
+- title: Projects
+  url: /projects/
+
+social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
+  GitHub: https://github.com/gustavo-sopena
+
+sharing_links: # Appear at the bottom of single blog posts, add as desired. The value can be 'true' or the desired button colour
+  Twitter: "#0d94e7"
+  facebook: "#3B5998"
+  Email: true
