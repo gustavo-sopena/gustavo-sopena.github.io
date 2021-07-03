@@ -1,3 +1,22 @@
+# name: _config
+# description: website configuration
+# author: Gustavo Sopena
+# date started: Thursday: July 1, 2021
+
+# Table of Contents
+# - Theme and File Exclusions
+# - Set Plugins / Installed Gems
+# - Site Settings
+# - Gem Settings (Pagination Settings)
+# - Header Nav / Site Navigation
+# - Footer Nav
+# - Collections
+# - Collections Settings
+# - Site Favicons and Manifest Icons
+# - Links
+
+# --------------------------------------------------------------------------- #
+
 # Set theme
 remote_theme: daviddarnes/alembic@main
 
@@ -7,7 +26,9 @@ exclude:
 - Gemfile
 - Gemfile.lock
 
-# Set plugins
+# --------------------------------------------------------------------------- #
+
+# Set plugins / Installed Gems
 plugins:
 - jekyll-sitemap
 - jekyll-mentions
@@ -20,41 +41,59 @@ plugins:
 - jemoji
 - jekyll-remote-theme
 
+# --------------------------------------------------------------------------- #
+
 # Site settings
-url: 'https://mydomain.com'
-baseurl: ''
-title: 'My website'
-description: 'This is my new website'
-permalink: pretty
+encoding: utf-8
+lang: en-US
+url: "https://gustavo-sopena.github.io"
+baseurl: ""
+title: "Gustavo Sopena"
+description: "Gustavo Sopena's website to showcase projects."
+permalink: /projects/:title
 logo: "https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=52"
+email: "gsopena7@gmail.com"
+css_inline: true
+sass:
+  style: compressed
+
+# --------------------------------------------------------------------------- #
 
 # Pagination
 paginate: 5
-paginate_path: blog/page:num
+paginate_path: projects/page:num
 
-# Header nav
+# --------------------------------------------------------------------------- #
+
+# Header Nav / Site Navigation
 navigation_header:
 - title: Home
   url: /
 - title: About
   url: /about/
-- title: Blog
-  url: /blog/
+- title: Projects
+  url: /projects/
+
+# --------------------------------------------------------------------------- #
 
 # Footer nav
-navigation_footer:
-- title: Back to top
-  url: "#top"
+# navigation_footer:
+# - title: Back to top
+#   url: "#top"
+
+# --------------------------------------------------------------------------- #
 
 # Collections
 collections:
   posts:
-    title: Posts
+    title: Projects
     output: true
-    description: "My thoughts and ideas"
+    description: "[See Project Categories](categories)"
     feature_text: |
-      Welcome to my blog
+      Current and Past Projects
     feature_image: "https://picsum.photos/2560/600?image=866"
+
+# --------------------------------------------------------------------------- #
 
 # Collection settings
 defaults:
@@ -70,3 +109,26 @@ defaults:
       type: "pages"
     values:
       layout: page # Set the default layout for pages
+
+# --------------------------------------------------------------------------- #
+
+# Site Favicons and Manifest Icons
+favicons:
+  16: '/assets/logos/logo@16px.png'
+  32: '/assets/logos/logo@32px.png'
+  96: '/assets/logos/logo@96px.png'
+  120: '/assets/logos/logo@120px.png'
+  144: '/assets/logos/logo@144px.png'
+  180: '/assets/logos/logo@180px.png'
+  512: '/assets/logos/logo@512px.png'
+  1024: '/assets/logos/logo@1024px.png'
+
+# --------------------------------------------------------------------------- #
+
+# Links
+social_links:
+  GitHub: https://github.com/gustavo-sopena
+
+sharing_links:
+  Email: true
+  Twitter: "#0d94e7"
